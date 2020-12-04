@@ -19,4 +19,20 @@ includes:
 
 desktop.site:
   apps:
+    tk-multi-shotgunpanel:
+      action_hook: '{self}/tk-desktop_actions.py'
+      action_mappings:
+        PublishedFile:
+        - actions: [publish_clipboard]
+          filters: {}
+        Task:
+        - actions: [assign_task, task_to_ip]
+          filters: {}
+        Version:
+        - actions: [quicktime_clipboard, sequence_clipboard, add_to_playlist]
+          filters: {}
+      location: "@common.apps.tk-multi-shotgunpanel.location"
   location: "@common.engines.tk-desktop.location"
+  run_at_startup:
+    - {app_instance: '', name: Apps}
+    - {app_instance: tk-multi-shotgunpanel, name: ''}

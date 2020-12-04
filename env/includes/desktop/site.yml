@@ -13,26 +13,10 @@
 # is running in its project level configuration
 
 includes:
-- ../common/apps.yml
 - ../common/frameworks.yml
 - ../common/engines.yml
+- ../common/apps.yml
 
 desktop.site:
   apps:
-    tk-multi-shotgunpanel:
-      actions_hook: '{self}/general_actions.py'
-      action_mappings:
-        PublishedFile:
-        - actions: [publish_clipboard]
-          filters: {}
-        Task:
-        - actions: [assign_task, task_to_ip]
-          filters: {}
-        Version:
-        - actions: [quicktime_clipboard, sequence_clipboard, add_to_playlist]
-          filters: {}
-      locations: "@common.apps.tk-multi-shotgunpanel.location"
   location: "@common.engines.tk-desktop.location"
-  run_at_startup:
-  - {app_instance: '', name: Apps}
-  - {app_instance: tk-multi-shotgunpanel, name: ''}
